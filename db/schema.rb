@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 2018_10_21_130207) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tsunamis", force: :cascade do |t|
     t.date "Date"
     t.time "Time"
