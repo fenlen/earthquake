@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @recorded.Date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @recorded.Time %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @recorded.Latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @recorded.Longitude %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @recorded.Depth %>
+</p>
+
+<p>
+  <strong>Magnitude:</strong>
+  <%= @recorded.Magnitude %>
+</p>
+
+<p>
+  <strong>Magnitudetype:</strong>
+  <%= @recorded.MagnitudeType %>
+</p>
+
+<p>
+  <strong>Sourceid:</strong>
+  <%= @recorded.SourceId %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @recorded.Source %>
+</p>
+
+<p>
+  <strong>Samedayas:</strong>
+  <%= @recorded.SameDayAs %>
+</p>
+
+<%= link_to 'Edit', edit_recorded_path(@recorded) %> |
+<%= link_to 'Back', recordeds_path %>

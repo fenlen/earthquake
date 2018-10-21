@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recordeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Depth</th>
+      <th>Magnitude</th>
+      <th>Magnitudetype</th>
+      <th>Sourceid</th>
+      <th>Source</th>
+      <th>Samedayas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recordeds.each do |recorded| %>
+      <tr>
+        <td><%= recorded.Date %></td>
+        <td><%= recorded.Time %></td>
+        <td><%= recorded.Latitude %></td>
+        <td><%= recorded.Longitude %></td>
+        <td><%= recorded.Depth %></td>
+        <td><%= recorded.Magnitude %></td>
+        <td><%= recorded.MagnitudeType %></td>
+        <td><%= recorded.SourceId %></td>
+        <td><%= recorded.Source %></td>
+        <td><%= recorded.SameDayAs %></td>
+        <td><%= link_to 'Show', recorded %></td>
+        <td><%= link_to 'Edit', edit_recorded_path(recorded) %></td>
+        <td><%= link_to 'Destroy', recorded, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recorded', new_recorded_path %>
