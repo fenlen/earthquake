@@ -1,0 +1,2 @@
+class Recorded < ApplicationRecord
+end

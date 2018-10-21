@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  EarthquakeCode: MyString
+  Date: 2018-10-21
+  Location: MyString
+  Longitude: 9.99
+  Latitude: 9.99
+  deaths: 1
+  Magnitude: 9.99
+
+two:
+  EarthquakeCode: MyString
+  Date: 2018-10-21
+  Location: MyString
+  Longitude: 9.99
+  Latitude: 9.99
+  deaths: 1
+  Magnitude: 9.99

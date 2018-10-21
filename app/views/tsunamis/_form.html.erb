@@ -1,0 +1,92 @@
+<%= form_with(model: tsunami, local: true) do |form| %>
+  <% if tsunami.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tsunami.errors.count, "error") %> prohibited this tsunami from being saved:</h2>
+
+      <ul>
+      <% tsunami.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Date %>
+    <%= form.date_select :Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Time %>
+    <%= form.time_select :Time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SameDayAs %>
+    <%= form.text_field :SameDayAs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :FocalDepth %>
+    <%= form.text_field :FocalDepth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Magnitude %>
+    <%= form.text_field :Magnitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Country %>
+    <%= form.text_field :Country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_field :Location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :MaximumWaterHeight %>
+    <%= form.text_field :MaximumWaterHeight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Deaths %>
+    <%= form.number_field :Deaths %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Injuries %>
+    <%= form.number_field :Injuries %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DamageInMillions %>
+    <%= form.number_field :DamageInMillions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :HousesDestroyed %>
+    <%= form.number_field :HousesDestroyed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :HausesDamaged %>
+    <%= form.number_field :HausesDamaged %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

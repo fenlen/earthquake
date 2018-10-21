@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Date: 2018-10-21
+  Time: 2018-10-21 14:02:07
+  SameDayAs: MyString
+  FocalDepth: 9.99
+  Magnitude: 9.99
+  Country: MyString
+  Location: MyString
+  Latitude: 9.99
+  Longitude: 9.99
+  MaximumWaterHeight: 9.99
+  Deaths: 1
+  Injuries: 1
+  DamageInMillions: 1
+  HousesDestroyed: 1
+  HausesDamaged: 1
+
+two:
+  Date: 2018-10-21
+  Time: 2018-10-21 14:02:07
+  SameDayAs: MyString
+  FocalDepth: 9.99
+  Magnitude: 9.99
+  Country: MyString
+  Location: MyString
+  Latitude: 9.99
+  Longitude: 9.99
+  MaximumWaterHeight: 9.99
+  Deaths: 1
+  Injuries: 1
+  DamageInMillions: 1
+  HousesDestroyed: 1
+  HausesDamaged: 1

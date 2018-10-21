@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Date: 2018-10-21
+  Time: 2018-10-21 13:50:44
+  Latitude: 9.99
+  Longitude: 9.99
+  Depth: 9.99
+  Magnitude: 9.99
+  MagnitudeType: MyString
+  SourceId: MyString
+  Source: MyString
+  SameDayAs: MyString
+
+two:
+  Date: 2018-10-21
+  Time: 2018-10-21 13:50:44
+  Latitude: 9.99
+  Longitude: 9.99
+  Depth: 9.99
+  Magnitude: 9.99
+  MagnitudeType: MyString
+  SourceId: MyString
+  Source: MyString
+  SameDayAs: MyString

@@ -1,0 +1,2 @@
+class Tsunami < ApplicationRecord
+end
