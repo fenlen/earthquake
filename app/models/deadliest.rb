@@ -1,2 +1,0 @@
-class Deadliest < ApplicationRecord
-end
