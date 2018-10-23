@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  get 'earthquakes/index'
+  root 'earthquakes#index'
   resources :tests
   resources :tsunamis
   resources :recordeds
