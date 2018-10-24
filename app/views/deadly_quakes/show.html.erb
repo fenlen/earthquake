@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @deadly_quake.ID %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @deadly_quake.Date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @deadly_quake.Location %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @deadly_quake.Longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @deadly_quake.Latitude %>
+</p>
+
+<p>
+  <strong>Deaths:</strong>
+  <%= @deadly_quake.Deaths %>
+</p>
+
+<p>
+  <strong>Magnitude:</strong>
+  <%= @deadly_quake.Magnitude %>
+</p>
+
+<%= link_to 'Edit', edit_deadly_quake_path(@deadly_quake) %> |
+<%= link_to 'Back', deadly_quakes_path %>

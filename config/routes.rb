@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :tsunamis
+  resources :earthquake_data
+  resources :deadly_quakes
   get 'earthquakes/index'
   root 'earthquakes#index'
   resources :tests

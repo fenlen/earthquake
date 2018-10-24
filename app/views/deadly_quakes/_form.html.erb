@@ -1,0 +1,52 @@
+<%= form_with(model: deadly_quake, local: true) do |form| %>
+  <% if deadly_quake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(deadly_quake.errors.count, "error") %> prohibited this deadly_quake from being saved:</h2>
+
+      <ul>
+      <% deadly_quake.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ID %>
+    <%= form.text_field :ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Date %>
+    <%= form.date_select :Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_field :Location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Deaths %>
+    <%= form.number_field :Deaths %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Magnitude %>
+    <%= form.text_field :Magnitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

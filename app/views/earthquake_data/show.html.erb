@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @earthquake_datum.Date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @earthquake_datum.Time %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @earthquake_datum.Latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @earthquake_datum.Longitude %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @earthquake_datum.Depth %>
+</p>
+
+<p>
+  <strong>Magnitude:</strong>
+  <%= @earthquake_datum.Magnitude %>
+</p>
+
+<p>
+  <strong>Magnitude:</strong>
+  <%= @earthquake_datum.Magnitude %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @earthquake_datum.Type %>
+</p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @earthquake_datum.ID %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @earthquake_datum.Source %>
+</p>
+
+<p>
+  <strong>Samedayas:</strong>
+  <%= @earthquake_datum.SameDayAs %>
+</p>
+
+<%= link_to 'Edit', edit_earthquake_datum_path(@earthquake_datum) %> |
+<%= link_to 'Back', earthquake_data_path %>

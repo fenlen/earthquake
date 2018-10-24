@@ -1,0 +1,2 @@
+class EarthquakeDatum < ApplicationRecord
+end

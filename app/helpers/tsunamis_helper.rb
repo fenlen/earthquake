@@ -1,0 +1,2 @@
+module TsunamisHelper
+end
