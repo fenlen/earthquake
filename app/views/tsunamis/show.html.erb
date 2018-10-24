@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @tsunami.Date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @tsunami.Time %>
+</p>
+
+<p>
+  <strong>Samedayas:</strong>
+  <%= @tsunami.SameDayAs %>
+</p>
+
+<p>
+  <strong>Focal depth:</strong>
+  <%= @tsunami.Focal_Depth %>
+</p>
+
+<p>
+  <strong>Primary magnitude:</strong>
+  <%= @tsunami.Primary_Magnitude %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @tsunami.Country %>
+</p>
+
+<p>
+  <strong>Location name:</strong>
+  <%= @tsunami.Location_Name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @tsunami.Latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @tsunami.Longitude %>
+</p>
+
+<p>
+  <strong>Maximun water height:</strong>
+  <%= @tsunami.Maximun_Water_Height %>
+</p>
+
+<p>
+  <strong>Total deaths:</strong>
+  <%= @tsunami.Total_Deaths %>
+</p>
+
+<p>
+  <strong>Total injuries:</strong>
+  <%= @tsunami.Total_Injuries %>
+</p>
+
+<p>
+  <strong>Total damage million dollars:</strong>
+  <%= @tsunami.Total_Damage_Million_Dollars %>
+</p>
+
+<p>
+  <strong>Total houses destroyed:</strong>
+  <%= @tsunami.Total_Houses_Destroyed %>
+</p>
+
+<p>
+  <strong>Total houses damaged:</strong>
+  <%= @tsunami.Total_Houses_Damaged %>
+</p>
+
+<%= link_to 'Edit', edit_tsunami_path(@tsunami) %> |
+<%= link_to 'Back', tsunamis_path %>

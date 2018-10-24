@@ -1,0 +1,92 @@
+<%= form_with(model: tsunami, local: true) do |form| %>
+  <% if tsunami.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tsunami.errors.count, "error") %> prohibited this tsunami from being saved:</h2>
+
+      <ul>
+      <% tsunami.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Date %>
+    <%= form.date_select :Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Time %>
+    <%= form.time_select :Time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SameDayAs %>
+    <%= form.text_field :SameDayAs %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Focal_Depth %>
+    <%= form.number_field :Focal_Depth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Primary_Magnitude %>
+    <%= form.text_field :Primary_Magnitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Country %>
+    <%= form.text_field :Country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Location_Name %>
+    <%= form.text_field :Location_Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Maximun_Water_Height %>
+    <%= form.text_field :Maximun_Water_Height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Total_Deaths %>
+    <%= form.number_field :Total_Deaths %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Total_Injuries %>
+    <%= form.number_field :Total_Injuries %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Total_Damage_Million_Dollars %>
+    <%= form.text_field :Total_Damage_Million_Dollars %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Total_Houses_Destroyed %>
+    <%= form.number_field :Total_Houses_Destroyed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Total_Houses_Damaged %>
+    <%= form.number_field :Total_Houses_Damaged %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
