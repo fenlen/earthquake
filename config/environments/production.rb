@@ -85,7 +85,7 @@ Rails.application.configure do
 
   config.serve_static_assets = true
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
-  config.asset.compile = true
+  config.assets.compile = true
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
