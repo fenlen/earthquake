@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   get 'earthquakes/index'
   root 'earthquakes#index'
   resources :tests
-  resources :tsunamis
-  resources :recordeds
-  resources :deadliests
   resources :statistics
   mount API::Root, at: '/'
 
