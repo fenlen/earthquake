@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "deadly_quakes/edit", type: :view do
   before(:each) do
     @deadly_quake = assign(:deadly_quake, DeadlyQuake.create!(
-      :ID => "MyString",
+      :EqCode => "MyString",
       :Location => "MyString",
       :Longitude => "9.99",
       :Latitude => "9.99",
@@ -17,7 +17,7 @@ RSpec.describe "deadly_quakes/edit", type: :view do
 
     assert_select "form[action=?][method=?]", deadly_quake_path(@deadly_quake), "post" do
 
-      assert_select "input[name=?]", "deadly_quake[ID]"
+      assert_select "input[name=?]", "deadly_quake[EqCode]"
 
       assert_select "input[name=?]", "deadly_quake[Location]"
 

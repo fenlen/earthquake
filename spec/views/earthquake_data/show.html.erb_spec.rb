@@ -9,7 +9,7 @@ RSpec.describe "earthquake_data/show", type: :view do
       :Magnitude => "",
       :Magnitude => "Magnitude",
       :Type => "Type",
-      :ID => "Id",
+      :SourceId => "Source",
       :Source => "Source",
       :SameDayAs => "Same Day As"
     ))
@@ -23,7 +23,7 @@ RSpec.describe "earthquake_data/show", type: :view do
     expect(rendered).to match(//)
     expect(rendered).to match(/Magnitude/)
     expect(rendered).to match(/Type/)
-    expect(rendered).to match(/Id/)
+    expect(rendered).to match(/Source/)
     expect(rendered).to match(/Source/)
     expect(rendered).to match(/Same Day As/)
   end

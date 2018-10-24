@@ -10,7 +10,7 @@ RSpec.describe "earthquake_data/index", type: :view do
         :Magnitude => "",
         :Magnitude => "Magnitude",
         :Type => "Type",
-        :ID => "Id",
+        :SourceId => "Source",
         :Source => "Source",
         :SameDayAs => "Same Day As"
       ),
@@ -21,7 +21,7 @@ RSpec.describe "earthquake_data/index", type: :view do
         :Magnitude => "",
         :Magnitude => "Magnitude",
         :Type => "Type",
-        :ID => "Id",
+        :SourceId => "Source",
         :Source => "Source",
         :SameDayAs => "Same Day As"
       )
@@ -36,7 +36,7 @@ RSpec.describe "earthquake_data/index", type: :view do
     assert_select "tr>td", :text => "".to_s, :count => 2
     assert_select "tr>td", :text => "Magnitude".to_s, :count => 2
     assert_select "tr>td", :text => "Type".to_s, :count => 2
-    assert_select "tr>td", :text => "Id".to_s, :count => 2
+    assert_select "tr>td", :text => "Source".to_s, :count => 2
     assert_select "tr>td", :text => "Source".to_s, :count => 2
     assert_select "tr>td", :text => "Same Day As".to_s, :count => 2
   end

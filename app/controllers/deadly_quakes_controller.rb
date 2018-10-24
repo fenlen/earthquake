@@ -69,6 +69,6 @@ class DeadlyQuakesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deadly_quake_params
-      params.require(:deadly_quake).permit(:ID, :Date, :Location, :Longitude, :Latitude, :Deaths, :Magnitude)
+      params.require(:deadly_quake).permit(:EqCode, :Date, :Location, :Longitude, :Latitude, :Deaths, :Magnitude)
     end
 end

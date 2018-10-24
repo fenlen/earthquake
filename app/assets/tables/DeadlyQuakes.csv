@@ -1,4 +1,4 @@
-ID,Date,Location,Longitude,Latitude,Deaths,Magnitude
+EqCode,Date,Location,Longitude,Latitude,Deaths,Magnitude
 EQ001,22/03/1966,"Southeast of Ningjin, Hebei (Hopeh), China ",37.5,115.1,"1,000",6.9
 EQ002,19/08/1966,"Varto, Turkey ",39.1,41.48,"2,529",6.8
 EQ003,31/08/1968,"Dasht-e Bayaz, Iran ",33.9,59.02,"9,000",7.3
@@ -57,3 +57,8 @@ EQ055,26/05/2006,Indonesia ,7.961,110.446,"5,749",6.3
 EQ056,12/05/2008,"Eastern Sichuan, China ",31.002,103.322,"87,587",7.9
 EQ057,12/01/2010,Haiti,18.457,-72.533,"222,521",7
 EQ058,27/02/2010,Chile,-36.1,-72.6,525,8.8
+,,,,,,
+,"* Deaths caused directly by earthquake (deaths from factors such as mudslides took deaths over 1,000)",,,,,
+,,,,,,
+,SOURCE,USGS,,,,
+,DATALINK,http://earthquake.usgs.gov/earthquakes/world/world_deaths.php,,,,

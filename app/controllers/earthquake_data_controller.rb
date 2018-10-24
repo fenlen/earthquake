@@ -69,6 +69,6 @@ class EarthquakeDataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def earthquake_datum_params
-      params.require(:earthquake_datum).permit(:Date, :Time, :Latitude, :Longitude, :Depth, :Magnitude, :Magnitude, :Type, :ID, :Source, :SameDayAs)
+      params.require(:earthquake_datum).permit(:Date, :Time, :Latitude, :Longitude, :Depth, :Magnitude, :Magnitude, :Type, :SourceId, :Source, :SameDayAs)
     end
 end

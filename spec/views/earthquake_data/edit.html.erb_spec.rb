@@ -9,7 +9,7 @@ RSpec.describe "earthquake_data/edit", type: :view do
       :Magnitude => "",
       :Magnitude => "MyString",
       :Type => "MyString",
-      :ID => "MyString",
+      :SourceId => "MyString",
       :Source => "MyString",
       :SameDayAs => "MyString"
     ))
@@ -32,7 +32,7 @@ RSpec.describe "earthquake_data/edit", type: :view do
 
       assert_select "input[name=?]", "earthquake_datum[Type]"
 
-      assert_select "input[name=?]", "earthquake_datum[ID]"
+      assert_select "input[name=?]", "earthquake_datum[SourceId]"
 
       assert_select "input[name=?]", "earthquake_datum[Source]"
 
