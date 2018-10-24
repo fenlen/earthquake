@@ -1,0 +1,2 @@
+class DeadlyQuake < ApplicationRecord
+end

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deadly Quakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Deaths</th>
+      <th>Magnitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deadly_quakes.each do |deadly_quake| %>
+      <tr>
+        <td><%= deadly_quake.ID %></td>
+        <td><%= deadly_quake.Date %></td>
+        <td><%= deadly_quake.Location %></td>
+        <td><%= deadly_quake.Longitude %></td>
+        <td><%= deadly_quake.Latitude %></td>
+        <td><%= deadly_quake.Deaths %></td>
+        <td><%= deadly_quake.Magnitude %></td>
+        <td><%= link_to 'Show', deadly_quake %></td>
+        <td><%= link_to 'Edit', edit_deadly_quake_path(deadly_quake) %></td>
+        <td><%= link_to 'Destroy', deadly_quake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deadly Quake', new_deadly_quake_path %>

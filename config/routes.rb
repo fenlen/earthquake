@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :deadly_quakes
   get 'earthquakes/index'
   root 'earthquakes#index'
   resources :tests
