@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_204940) do
-
-  create_table "deadliests", force: :cascade do |t|
-    t.string "EarthquakeCode"
-    t.date "Date"
-    t.string "Location"
-    t.decimal "Longitude"
-    t.decimal "Latitude"
-    t.integer "deaths"
-    t.decimal "Magnitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_10_24_141950) do
 
   create_table "deadly_quakes", force: :cascade do |t|
     t.string "EqCode"
@@ -44,26 +32,6 @@ ActiveRecord::Schema.define(version: 2018_10_24_204940) do
     t.integer "Depth"
     t.string "Magnitude"
     t.string "Type"
-    t.string "SourceId"
-    t.string "Source"
-    t.string "SameDayAs"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "recordeds", force: :cascade do |t|
-    t.date "Date"
-    t.time "Time"
-    t.decimal "Latitude"
-    t.decimal "Longitude"
-    t.decimal "Depth"
-    t.decimal "Magnitude"
-    t.string "MagnitudeType"
     t.string "SourceId"
     t.string "Source"
     t.string "SameDayAs"

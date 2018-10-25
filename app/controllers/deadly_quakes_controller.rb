@@ -4,7 +4,7 @@ class DeadlyQuakesController < ApplicationController
   # GET /deadly_quakes
   # GET /deadly_quakes.json
   def index
-    @deadly_quakes = DeadlyQuake.all
+    @deadly_quakes = DeadlyQuake.search(params[:term])
   end
 
   # GET /deadly_quakes/1
@@ -60,6 +60,7 @@ class DeadlyQuakesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

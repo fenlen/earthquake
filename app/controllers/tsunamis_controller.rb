@@ -4,7 +4,7 @@ class TsunamisController < ApplicationController
   # GET /tsunamis
   # GET /tsunamis.json
   def index
-    @tsunamis = Tsunami.all
+    @tsunamis = Tsunami.search(params[:term])
   end
 
   # GET /tsunamis/1

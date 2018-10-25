@@ -2,6 +2,11 @@
 
 <h1>Earthquake Data</h1>
 
+<%= form_tag(earthquake_data_path, method: :get) do %>
+  <%= date_field( nil, "term", value:  params[:term]) %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <table>
   <thead>
     <tr>

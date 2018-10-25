@@ -4,7 +4,7 @@ class EarthquakeDataController < ApplicationController
   # GET /earthquake_data
   # GET /earthquake_data.json
   def index
-    @earthquake_data = EarthquakeDatum.all
+    @earthquake_data = EarthquakeDatum.search(params[:term])
   end
 
   # GET /earthquake_data/1

@@ -1,0 +1,32 @@
+
+<div id="chart" style="width:100%; height:400px;"></div>
+<%= form_tag(chart1_path, method: :get) do %>
+  <%= date_field( nil, "term", value:  params[:term]) %>
+  <%= submit_tag 'Search' %>
+<% end %>
+ 
+<script type="text/javascript">
+$(function () { 
+    var myChart = Highcharts.chart('chart', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Calamities by date'
+        },
+        xAxis: {
+            categories: ['Deadly Earthquakes', 'Earthquakes', 'Tsunamis']
+        },
+        yAxis: {
+            title: {
+                text: 'Calamities happened'
+            }
+        },
+        series: [{
+			showInLegend: false,  
+            name: 'Total',
+            data: [<%=raw @deadly_count %>, <%=raw @earthquake_count %>, <%=raw @tsunami_count %>]
+        }]
+    });
+});
+</script>
