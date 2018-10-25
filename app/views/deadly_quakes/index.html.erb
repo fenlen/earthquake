@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Deadly Quakes</h1>
+<h1>Deadly Earthquakes</h1>
 
 <table>
   <thead>
@@ -26,14 +26,9 @@
         <td><%= deadly_quake.Latitude %></td>
         <td><%= deadly_quake.Deaths %></td>
         <td><%= deadly_quake.Magnitude %></td>
-        <td><%= link_to 'Show', deadly_quake %></td>
-        <td><%= link_to 'Edit', edit_deadly_quake_path(deadly_quake) %></td>
-        <td><%= link_to 'Destroy', deadly_quake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Details', deadly_quake %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Deadly Quake', new_deadly_quake_path %>

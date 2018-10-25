@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+	Earthquake <%= @earthquake_datum.SourceId %>
+</h1>
+
+<br>
+
 <p>
   <strong>Date:</strong>
   <%= @earthquake_datum.Date %>
@@ -41,19 +47,8 @@
 </p>
 
 <p>
-  <strong>Sourceid:</strong>
-  <%= @earthquake_datum.SourceId %>
-</p>
-
-<p>
   <strong>Source:</strong>
   <%= @earthquake_datum.Source %>
 </p>
 
-<p>
-  <strong>Samedayas:</strong>
-  <%= @earthquake_datum.SameDayAs %>
-</p>
-
-<%= link_to 'Edit', edit_earthquake_datum_path(@earthquake_datum) %> |
 <%= link_to 'Back', earthquake_data_path %>

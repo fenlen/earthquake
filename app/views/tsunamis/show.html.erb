@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+	Tsunami in <%= @tsunami.Location_Name %>
+</h1>
+
+<br>
+
 <p>
   <strong>Date:</strong>
   <%= @tsunami.Date %>
@@ -11,11 +17,6 @@
 </p>
 
 <p>
-  <strong>Samedayas:</strong>
-  <%= @tsunami.SameDayAs %>
-</p>
-
-<p>
   <strong>Focal depth:</strong>
   <%= @tsunami.Focal_Depth %>
 </p>
@@ -23,16 +24,6 @@
 <p>
   <strong>Primary magnitude:</strong>
   <%= @tsunami.Primary_Magnitude %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @tsunami.Country %>
-</p>
-
-<p>
-  <strong>Location name:</strong>
-  <%= @tsunami.Location_Name %>
 </p>
 
 <p>
@@ -75,5 +66,4 @@
   <%= @tsunami.Total_Houses_Damaged %>
 </p>
 
-<%= link_to 'Edit', edit_tsunami_path(@tsunami) %> |
 <%= link_to 'Back', tsunamis_path %>

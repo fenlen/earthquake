@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>
+	Earthquake in <%= @deadly_quake.Location %>
+</h1>
+
+<br>
+
 <p>
   <strong>Eqcode:</strong>
   <%= @deadly_quake.EqCode %>
@@ -8,11 +14,6 @@
 <p>
   <strong>Date:</strong>
   <%= @deadly_quake.Date %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @deadly_quake.Location %>
 </p>
 
 <p>
@@ -35,5 +36,4 @@
   <%= @deadly_quake.Magnitude %>
 </p>
 
-<%= link_to 'Edit', edit_deadly_quake_path(@deadly_quake) %> |
 <%= link_to 'Back', deadly_quakes_path %>
