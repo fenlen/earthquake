@@ -2,9 +2,9 @@
 
 <h1>Tsunamis</h1>
 
-<%= form_tag(tsunamis_path, method: :get) do %>
-  <%= date_field( nil, "term", value:  params[:term]) %>
-  <%= submit_tag 'Search' %>
+<%= form_tag(tsunamis_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+  <%= date_field( nil, "term", value:  params[:term], class: "form-control form-control-lg mr-sm-2") %>
+  <%= submit_tag('Search', class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
 <% end %>
 
 <div class="table" id="results">
