@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_141950) do
+ActiveRecord::Schema.define(version: 2018_10_24_141718) do
 
   create_table "deadly_quakes", force: :cascade do |t|
     t.string "EqCode"
