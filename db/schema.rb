@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2018_10_24_141950) do
     t.string "EqCode"
     t.date "Date"
     t.string "Location"
-    t.decimal "Longitude"
     t.decimal "Latitude"
+    t.decimal "Longitude"
     t.integer "Deaths"
     t.decimal "Magnitude"
     t.datetime "created_at", null: false
@@ -34,27 +34,23 @@ ActiveRecord::Schema.define(version: 2018_10_24_141950) do
     t.string "Type"
     t.string "SourceId"
     t.string "Source"
-    t.string "SameDayAs"
+    t.integer "deadly_quake_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["deadly_quake_id", "created_at"], name: "index_earthquake_data_on_deadly_quake_id_and_created_at"
+    t.index ["deadly_quake_id"], name: "index_earthquake_data_on_deadly_quake_id"
   end
 
   create_table "tsunamis", force: :cascade do |t|
     t.date "Date"
     t.time "Time"
-    t.string "SameDayAs"
     t.integer "Focal_Depth"
     t.decimal "Primary_Magnitude"
     t.string "Country"
     t.string "Location_Name"
     t.decimal "Latitude"
     t.decimal "Longitude"
-    t.decimal "Maximun_Water_Height"
+    t.decimal "Maximum_Water_Height"
     t.integer "Total_Deaths"
     t.integer "Total_Injuries"
     t.decimal "Total_Damage_Million_Dollars"

@@ -22,38 +22,38 @@
   </div>
   <% @deadly_quakes.each do |deadly_quake| %>
 	  <div class='table_row'>
-		<div class='table_small'>
-		  <div class='table_cell'>EqCode</div>
-		  <div class='table_cell'><%= deadly_quake.EqCode %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Date</div>
-		  <div class='table_cell'><%= deadly_quake.Date %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Location</div>
-		  <div class='table_cell'><%= deadly_quake.Location %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Longitude</div>
-		  <div class='table_cell'><%= deadly_quake.Longitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Latitude</div>
-		  <div class='table_cell'><%= deadly_quake.Latitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Deaths</div>
-		  <div class='table_cell'><%= deadly_quake.Deaths %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Magnitude</div>
-		  <div class='table_cell'><%= deadly_quake.Magnitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'></div>
-		  <div class='table_cell'><%= link_to 'Details', deadly_quake, class: "btn btn-lg btn-outline-secondary" %></div>
-		</div>
+			<div class='table_small'>
+				<div class='table_cell'>EqCode</div>
+				<div class='table_cell'><%= deadly_quake.EqCode %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Date</div>
+				<div class='table_cell'><%= deadly_quake.Date %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Location</div>
+				<div class='table_cell'><%= deadly_quake.Location %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Latitude</div>
+				<div class='table_cell'><%= deadly_quake.Latitude %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Longitude</div>
+				<div class='table_cell'><%= deadly_quake.Longitude %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Deaths</div>
+				<div class='table_cell'><%= deadly_quake.Deaths %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'>Magnitude</div>
+				<div class='table_cell'><%= deadly_quake.Magnitude %></div>
+			</div>
+			<div class='table_small'>
+				<div class='table_cell'></div>
+				<div class='table_cell'><%= link_to 'Details', deadly_quake %></div>
+			</div>
 	  </div>
 	<% end %>
 </div>
