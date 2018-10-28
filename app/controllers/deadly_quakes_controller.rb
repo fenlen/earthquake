@@ -11,13 +11,14 @@ class DeadlyQuakesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_deadly_quake
-      @deadly_quake = DeadlyQuake.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def deadly_quake_params
-      params.require(:deadly_quake).permit(:EqCode, :Date, :Location, :Longitude, :Latitude, :Deaths, :Magnitude)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_deadly_quake
+    @deadly_quake = DeadlyQuake.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def deadly_quake_params
+    params.require(:deadly_quake).permit(:EqCode, :Date, :Location, :Longitude, :Latitude, :Deaths, :Magnitude)
+  end
 end

@@ -3,11 +3,11 @@
 <h1>Tsunamis</h1>
 
 <%= form_tag(tsunamis_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-	<%= label_tag(:year_search, "Year:") %>
-	<%= text_field_tag(:year, params[:year], class: "form-control form-control-lg mr-sm-2") %>
-	<%= label_tag(:mag_search, "Minimal magnitude:") %>
-	<%= text_field_tag(:mag, params[:mag], class: "form-control form-control-lg mr-sm-2") %>
-	<%= submit_tag("Filter", class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
+  <%= label_tag(:year_search, "Year:") %>
+  <%= text_field_tag(:year, params[:year], class: "form-control form-control-lg mr-sm-2") %>
+  <%= label_tag(:mag_search, "Minimal magnitude:") %>
+  <%= text_field_tag(:mag, params[:mag], class: "form-control form-control-lg mr-sm-2") %>
+  <%= submit_tag("Filter", class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
 <% end %>
 
 <div class="table" id="results">
@@ -15,71 +15,71 @@
     <div class='table_header'>Location</div>
     <div class='table_header'>Date</div>
     <div class='table_header'>Time</div>
-	<div class='table_header'>Focal depth</div>
+    <div class='table_header'>Focal depth</div>
     <div class='table_header'>Primary magnitude</div>
-	<div class='table_header'>Latitude</div>
-	<div class='table_header'>Longitude</div>
-	<div class='table_header'>Maximun water height</div>
-	<div class='table_header'>Deaths</div>
-	<div class='table_header'>Injuries</div>
-	<div class='table_header'>Damage(million dollars)</div>
-	<div class='table_header'>Houses destroyed</div>
-	<div class='table_header'></div>
+    <div class='table_header'>Latitude</div>
+    <div class='table_header'>Longitude</div>
+    <div class='table_header'>Maximun water height</div>
+    <div class='table_header'>Deaths</div>
+    <div class='table_header'>Injuries</div>
+    <div class='table_header'>Damage(million dollars)</div>
+    <div class='table_header'>Houses destroyed</div>
+    <div class='table_header'></div>
   </div>
   <% @tsunamis.each do |tsunami| %>
-	  <div class='table_row'>
-		<div class='table_small'>
-		  <div class='table_cell'>Location</div>
-		  <div class='table_cell'><%= tsunami.Location_Name %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Date</div>
-		  <div class='table_cell'><%= tsunami.Date %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Time</div>
-		  <div class='table_cell'><%= tsunami.Time.to_s(:time) %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Focal depth</div>
-		  <div class='table_cell'><%= tsunami.Focal_Depth.to_s(:time) %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Primary magnitude</div>
-		  <div class='table_cell'><%= tsunami.Primary_Magnitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Latitude</div>
-		  <div class='table_cell'><%= tsunami.Latitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Longitude</div>
-		  <div class='table_cell'><%= tsunami.Longitude %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Maximum water height</div>
-		  <div class='table_cell'><%= tsunami.Maximum_Water_Height %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Deaths</div>
-		  <div class='table_cell'><%= tsunami.Total_Deaths %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Injuries</div>
-		  <div class='table_cell'><%= tsunami.Total_Injuries %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Damage(million dollars)</div>
-		  <div class='table_cell'><%= tsunami.Total_Damage_Million_Dollars %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'>Houses destroyed</div>
-		  <div class='table_cell'><%= tsunami.Total_Houses_Destroyed %></div>
-		</div>
-		<div class='table_small'>
-		  <div class='table_cell'></div>
-		  <div class='table_cell'><%= link_to 'Details', tsunami, class: "btn btn-lg btn-outline-secondary" %></div>
-		</div>
-	  </div>
-	<% end %>
+    <div class='table_row'>
+      <div class='table_small'>
+        <div class='table_cell'>Location</div>
+        <div class='table_cell'><%= tsunami.Location_Name %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Date</div>
+        <div class='table_cell'><%= tsunami.Date %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Time</div>
+        <div class='table_cell'><%= tsunami.Time.to_s(:time) %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Focal depth</div>
+        <div class='table_cell'><%= tsunami.Focal_Depth.to_s(:time) %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Primary magnitude</div>
+        <div class='table_cell'><%= tsunami.Primary_Magnitude %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Latitude</div>
+        <div class='table_cell'><%= tsunami.Latitude %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Longitude</div>
+        <div class='table_cell'><%= tsunami.Longitude %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Maximum water height</div>
+        <div class='table_cell'><%= tsunami.Maximum_Water_Height %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Deaths</div>
+        <div class='table_cell'><%= tsunami.Total_Deaths %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Injuries</div>
+        <div class='table_cell'><%= tsunami.Total_Injuries %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Damage(million dollars)</div>
+        <div class='table_cell'><%= tsunami.Total_Damage_Million_Dollars %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'>Houses destroyed</div>
+        <div class='table_cell'><%= tsunami.Total_Houses_Destroyed %></div>
+      </div>
+      <div class='table_small'>
+        <div class='table_cell'></div>
+        <div class='table_cell'><%= link_to 'Details', tsunami, class: "btn btn-lg btn-outline-secondary" %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
