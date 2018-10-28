@@ -2,13 +2,14 @@
 
 <h1>Tsunamis</h1>
 
-<%= form_tag(tsunamis_path, method: :get) do %>
+<%= form_tag(tsunamis_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
 	<%= label_tag(:year_search, "Year:") %>
-	<%= text_field_tag(:year, params[:year]) %>
+	<%= text_field_tag(:year, params[:year], class: "form-control form-control-lg mr-sm-2") %>
 	<%= label_tag(:mag_search, "Minimal magnitude:") %>
-	<%= text_field_tag(:mag, params[:mag]) %>
-	<%= submit_tag("Search") %>
+	<%= text_field_tag(:mag, params[:mag], class: "form-control form-control-lg mr-sm-2") %>
+	<%= submit_tag("Search", class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
 <% end %>
+
 <div class="table" id="results">
   <div class='theader'>
     <div class='table_header'>Location</div>
