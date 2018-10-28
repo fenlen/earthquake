@@ -2,9 +2,12 @@
 
 <h1>Earthquake Data</h1>
 
-<%= form_tag(earthquake_data_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-  <%= date_field( nil, "term", value:  params[:term], class: "form-control form-control-lg mr-sm-2") %>
-  <%= submit_tag('Search', class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
+<%= form_tag(earthquake_data_path, method: :get) do %>
+	<%= label_tag(:year_search, "Year:") %>
+	<%= text_field_tag(:year, params[:year]) %>
+	<%= label_tag(:mag_search, "Minimal magnitude:") %>
+	<%= text_field_tag(:mag, params[:mag]) %>
+	<%= submit_tag("Search") %>
 <% end %>
 
 <div class="table" id="results">

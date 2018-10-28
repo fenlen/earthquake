@@ -2,22 +2,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Deadly Earthquakes</h1>
-
-<%= form_tag(deadly_quakes_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-  <%= date_field( nil, "term", value:  params[:term], class: "form-control form-control-lg mr-sm-2") %>
-  <%= submit_tag('Search', class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
+<%= form_tag(deadly_quakes_path, method: :get) do %>
+	<%= label_tag(:year_search, "Year:") %>
+	<%= text_field_tag(:year, params[:year]) %>
+	<%= label_tag(:mag_search, "Minimal magnitude:") %>
+	<%= text_field_tag(:mag, params[:mag]) %>
+	<%= submit_tag("Search") %>
 <% end %>
-
 <div class="table" id="results">
   <div class='theader'>
     <div class='table_header'>EqCode</div>
     <div class='table_header'>Date</div>
     <div class='table_header'>Location</div>
     <div class='table_header'>Longitude</div>
-	<div class='table_header'>Latitude</div>
-	<div class='table_header'>Deaths</div>
-	<div class='table_header'>Magnitude</div>
-	<div class='table_header'></div>
+		<div class='table_header'>Latitude</div>
+		<div class='table_header'>Deaths</div>
+		<div class='table_header'>Magnitude</div>
+		<div class='table_header'></div>
   </div>
   <% @deadly_quakes.each do |deadly_quake| %>
 	  <div class='table_row'>
