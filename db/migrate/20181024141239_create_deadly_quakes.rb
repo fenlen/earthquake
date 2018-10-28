@@ -8,6 +8,7 @@ class CreateDeadlyQuakes < ActiveRecord::Migration[5.2]
       t.decimal :Longitude
       t.integer :Deaths
       t.decimal :Magnitude
+      t.references :tsunami, foreign_key: true
       t.timestamps
     end
   end

@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2018_10_24_141950) do
     t.decimal "Longitude"
     t.integer "Deaths"
     t.decimal "Magnitude"
+    t.integer "tsunami_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tsunami_id"], name: "index_deadly_quakes_on_tsunami_id"
   end
 
   create_table "earthquake_data", force: :cascade do |t|
@@ -35,10 +37,12 @@ ActiveRecord::Schema.define(version: 2018_10_24_141950) do
     t.string "SourceId"
     t.string "Source"
     t.integer "deadly_quake_id"
+    t.integer "tsunami_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["deadly_quake_id", "created_at"], name: "index_earthquake_data_on_deadly_quake_id_and_created_at"
     t.index ["deadly_quake_id"], name: "index_earthquake_data_on_deadly_quake_id"
+    t.index ["tsunami_id"], name: "index_earthquake_data_on_tsunami_id"
   end
 
   create_table "tsunamis", force: :cascade do |t|

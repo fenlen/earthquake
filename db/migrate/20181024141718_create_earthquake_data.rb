@@ -12,6 +12,7 @@ class CreateEarthquakeData < ActiveRecord::Migration[5.2]
       t.string :SourceId
       t.string :Source
       t.references :deadly_quake, foreign_key: true
+      t.references :tsunami, foreign_key: true
       t.timestamps
     end
     add_index :earthquake_data, [:deadly_quake_id, :created_at]

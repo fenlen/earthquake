@@ -19,6 +19,7 @@ csvDeadly.each do |row|
   t.Latitude = row['Latitude']
   t.Deaths = row['Deaths']
   t.Magnitude = row['Magnitude']
+  t.tsunami_id = nil
   t.save
 end
 
@@ -46,26 +47,50 @@ end
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Earthquake.csv'))
 csvEarthquake = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csvEarthquake.each do |row|
+  t = EarthquakeDatum.new
+    t.Date = row['Date']
+    t.Time = row['Time']
+    t.Latitude = row['Latitude']
+    t.Longitude = row['Longitude']
+    t.Depth = row['Depth']
+    t.Magnitude = row['Magnitude']
+    t.Type = row['Type']
+    t.SourceId = row['SourceId']
+    t.Source = row['Source']
+    t.deadly_quake_id = nil
+    t.tsunami_id = nil
+    t.save
+end
+
+earthquakes = EarthquakeDatum.all
 deadlyquakes = DeadlyQuake.all
+tsunamis = Tsunami.all
+
 deadlyquakes.each do |deadlyquake|
-  csvEarthquake.each do |row|
-    dateDeadly = Date.parse row['Date']
-    if dateDeadly == deadlyquake.Date
-      t = deadlyquake.earthquake_datum.create!(nil)
-      t.Date = row['Date']
-      t.Time = row['Time']
-      t.Latitude = row['Latitude']
-      t.Longitude = row['Longitude']
-      t.Depth = row['Depth']
-      t.Magnitude = row['Magnitude']
-      t.Type = row['Type']
-      t.SourceId = row['SourceId']
-      t.Source = row['Source']
-      t.save
+  earthquakes.each do |earthquake|
+    if earthquake.Date == deadlyquake.Date
+      earthquake.deadly_quake_id = deadlyquake.id
+      earthquake.save  
     end
   end
 end
 
+tsunamis.each do |tsunami|
+  earthquakes.each do |earthquake|
+    if earthquake.Date == tsunami.Date
+      earthquake.tsunami_id = tsunami.id
+      earthquake.save
+    end
+  end
+
+  deadlyquakes.each do |deadlyquake|
+    if deadlyquake.Date == tsunami.Date
+      deadlyquake.tsunami_id = tsunami.id
+      deadlyquake.save
+    end
+  end
+end
 
 # b.earthquake_datum.create!(nil)
 # earthquakes = EarthquakeDatum.all

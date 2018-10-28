@@ -22,4 +22,7 @@ class Tsunami < Calamity
             all
         end
     end
+
+    has_one :deadly_quake
+    has_many :earthquake_datum
 end
