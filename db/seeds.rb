@@ -46,11 +46,11 @@ end
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Earthquake.csv'))
 csvEarthquake = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csvEarthquake.each do |row|
-  deadlyquakes = DeadlyQuake.all
-  date = Date.parse row['Date']
-  deadlyquakes.each do |deadlyquake|
-    if date == deadlyquake.Date
+deadlyquakes = DeadlyQuake.all
+deadlyquakes.each do |deadlyquake|
+  csvEarthquake.each do |row|
+    dateDeadly = Date.parse row['Date']
+    if dateDeadly == deadlyquake.Date
       t = deadlyquake.earthquake_datum.create!(nil)
       t.Date = row['Date']
       t.Time = row['Time']
@@ -61,19 +61,6 @@ csvEarthquake.each do |row|
       t.Type = row['Type']
       t.SourceId = row['SourceId']
       t.Source = row['Source']
-      t.save
-    else
-      t = EarthquakeDatum.new
-      t.Date = row['Date']
-      t.Time = row['Time']
-      t.Latitude = row['Latitude']
-      t.Longitude = row['Longitude']
-      t.Depth = row['Depth']
-      t.Magnitude = row['Magnitude']
-      t.Type = row['Type']
-      t.SourceId = row['SourceId']
-      t.Source = row['Source']
-      t.deadly_quake_id = nil
       t.save
     end
   end
