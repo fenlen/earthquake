@@ -35,7 +35,17 @@
   <strong>Magnitude:</strong>
   <%= @deadly_quake.Magnitude %>
 </p>
+<% unless @deadly_quake.tsunami.nil? %>
+<button data-toggle="collapse" data-target="#tsunami">Associated Tsunami</button>
 
+<div id="tsunami" class="collapse">
+<div>Total Deaths: <%= @deadly_quake.tsunami.Total_Deaths %></div>
+<div>Total Injuries: <%= @deadly_quake.tsunami.Total_Injuries %></div>
+<div>Total Damage in Millions(Dollars): <%= @deadly_quake.tsunami.Total_Damage_Million_Dollars %></div>
+<div>Total Houses Destroyed: <%= @deadly_quake.tsunami.Total_Houses_Destroyed %></div>
+<div>Total Houses Damaged: <%= @deadly_quake.tsunami.Total_Houses_Damaged %></div>
+</div>
+<% end %>
 <%= link_to 'Back', deadly_quakes_path, class: "btn btn-lg btn-secondary my-2 my-sm-0" %>
 
 <br><br>
