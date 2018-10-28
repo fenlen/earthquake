@@ -15,13 +15,13 @@ class Calamity < ApplicationRecord
                 beginningoy = dt.beginning_of_year
                 endofy= dt.end_of_year
                 if mag != ""
-                    where("date >= ? and date <= ? and magnitude >= ?", beginningoy, endofy, mag)
+                    where("\"Date\" >= ? and \"Date\" <= ? and \"Magnitude\" >= ?", beginningoy, endofy, mag)
                 else
-                    where("date >= ? and date <= ?", beginningoy, endofy)
+                    where("\"Date\" >= ? and \"Date\" <= ?", beginningoy, endofy)
                 end
             end
         elsif mag and mag != "" 
-            where("magnitude >= ?", mag)
+            where("\"Magnitude\" >= ?", mag)
         else
             all
         end
