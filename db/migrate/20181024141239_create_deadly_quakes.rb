@@ -4,11 +4,10 @@ class CreateDeadlyQuakes < ActiveRecord::Migration[5.2]
       t.string :EqCode
       t.date :Date
       t.string :Location
-      t.decimal :Longitude
       t.decimal :Latitude
+      t.decimal :Longitude
       t.integer :Deaths
       t.decimal :Magnitude
-
       t.timestamps
     end
   end
