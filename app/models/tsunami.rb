@@ -11,13 +11,13 @@ class Tsunami < Calamity
                 beginningoy = dt.beginning_of_year
                 endofy= dt.end_of_year
                 if mag != ""
-                    where("Date >= ? and Date <= ? and Primary_Magnitude >= ?", beginningoy, endofy, mag)
+                    where("date >= ? and date <= ? and primary_magnitude >= ?", beginningoy, endofy, mag)
                 else
-                    where("Date >= ? and Date <= ?", beginningoy, endofy)
+                    where("date >= ? and date <= ?", beginningoy, endofy)
                 end
             end
         elsif mag and mag != "" 
-            where("Primary_Magnitude >= ?", mag)
+            where("primary_magnitude >= ?", mag)
         else
             all
         end
