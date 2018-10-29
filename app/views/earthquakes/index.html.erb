@@ -10,17 +10,83 @@ Feel free to roam around and check out our database and statistics. Remember you
 search through the whole table row by row, our search feature is there for you. If you run out
 of time you can still browse on the go on your mobile device and have as good of an experience.
 </p>
+<p>
+Here you can see a heatmap of all our records.
+</p>
 <% deadlyquakes = DeadlyQuake.all %>
-<div id="map" style="width: 100%; height: 400px; background-color: grey;"></div>
-<script>
-function initMap() {
+<% tsunamis = Tsunami.all  %>
+<% earthquakedata = EarthquakeDatum.all %>
+<div id="map" style="width: 100%; height: 700px; background-color: grey;"></div>
+<br><br>
 
-  var marker1 = {lat: <%= deadlyquakes.first.Longitude.to_f %> , lng:<%= deadlyquakes.first.Latitude.to_f %> };
-  var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 4, center: marker1});
-  var marker2 = new google.maps.Marker({position: marker1, map: map});
-  }
-  </script>
-  <script
-  src="https://www.google.com/maps/api/js?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0&callback=initMap" async defer>
-  </script>
+<script>
+
+      // This example requires the Visualization library. Include the libraries=visualization
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+
+      var map, heatmap;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: {lat: 0, lng: 0},
+          mapTypeId: 'satellite'
+        });
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: map
+        });
+      }
+
+      function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+      }
+
+      function changeGradient() {
+        var gradient = [
+          'rgba(0, 255, 255, 0)',
+          'rgba(0, 255, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 127, 255, 1)',
+          'rgba(0, 63, 255, 1)',
+          'rgba(0, 0, 255, 1)',
+          'rgba(0, 0, 223, 1)',
+          'rgba(0, 0, 191, 1)',
+          'rgba(0, 0, 159, 1)',
+          'rgba(0, 0, 127, 1)',
+          'rgba(63, 0, 91, 1)',
+          'rgba(127, 0, 63, 1)',
+          'rgba(191, 0, 31, 1)',
+          'rgba(255, 0, 0, 1)'
+        ]
+        heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+      }
+
+      function changeRadius() {
+        heatmap.set('radius', heatmap.get('radius') ? null : 20);
+      }
+
+      function changeOpacity() {
+        heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+      }
+
+      // Heatmap data: 500 Points
+      function getPoints() {
+			var points = []
+			<% deadlyquakes.each do |deadly_quake| %>
+				points.push(new google.maps.LatLng(<%= deadly_quake.Latitude.to_f %>, <%= deadly_quake.Longitude.to_f %>));
+			<% end %>
+			<% tsunamis.each do |tsunami| %>
+				points.push(new google.maps.LatLng(<%= tsunami.Latitude.to_f %>, <%= tsunami.Longitude.to_f %>));
+			<% end %>
+			<% earthquakedata.each do |earthquake_data| %>
+				points.push(new google.maps.LatLng(<%= earthquake_data.Latitude.to_f %>, <%= earthquake_data.Longitude.to_f %>));
+			<% end %>
+          return points
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0&libraries=visualization&callback=initMap">
+    </script>
