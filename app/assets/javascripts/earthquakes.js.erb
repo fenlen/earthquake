@@ -1,7 +1,8 @@
+<% deadlyquakes = DeadlyQuake.all %>
+<% tsunamis = Tsunami.all %>
+<% earthquakedata = EarthquakeDatum.all %>
 function initMap() {
-  <% deadlyquakes = DeadlyQuake.all %>
-  <% tsunamis = Tsunami.all %>
-  <% earthquakedata = EarthquakeDatum.all %>
+  
   <% deadlyquakes.each do |deadlyquake| %>
     var marker<%= deadlyquake.id %> = {lat: <%= deadlyquake.Longitude.to_f %> , lng:<%= deadlyquake.Latitude.to_f %> };
   <% end %>
@@ -19,7 +20,7 @@ function initMap() {
           data: getPoints(),
           map: map
         });
-  }
+}
         function toggleHeatmap() {
         heatmap.setMap(heatmap.getMap() ? null : map);
       }
