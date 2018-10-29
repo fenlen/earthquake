@@ -1,14 +1,5 @@
 <p id="notice"><%= notice %></p>
-<% if false %>
-<h1>Deadly Earthquakes</h1>
-<%= form_tag(deadly_quakes_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-  <%= label_tag(:year_search, "Year:") %>
-  <%= text_field_tag(:year, params[:year], class: "form-control form-control-lg mr-sm-2") %>
-  <%= label_tag(:mag_search, "Minimal magnitude:") %>
-  <%= text_field_tag(:mag, params[:mag], class: "form-control form-control-lg mr-sm-2") %>
-  <%= submit_tag("Filter", class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
-<% end %>
-<% end %>
+
 <table id="DeadlyQuakes" class="table display responsive no-wrap mw-100 mh-100" >
   <thead>
   <tr>
@@ -39,66 +30,3 @@
     <% end %>
   </tbody>
 </table>
-<% if false %>
-<div class="table" id="results">
-  <div class='theader'>
-    <div class='table_header'>EqCode</div>
-    <div class='table_header'>Date</div>
-    <div class='table_header'>Location</div>
-    <div class='table_header'>Longitude</div>
-    <div class='table_header'>Latitude</div>
-    <div class='table_header'>Deaths</div>
-    <div class='table_header'>Magnitude</div>
-		<div class='table_header'>Caused a tsunami</div>
-    <div class='table_header'></div>
-  </div>
-  <% @deadly_quakes.each do |deadly_quake| %>
-    <div class='table_row'>
-      <div class='table_small'>
-        <div class='table_cell'>EqCode</div>
-        <div class='table_cell'><%= deadly_quake.EqCode %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Date</div>
-        <div class='table_cell'><%= deadly_quake.Date %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Location</div>
-        <div class='table_cell'><%= deadly_quake.Location %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Latitude</div>
-        <div class='table_cell'><%= deadly_quake.Latitude %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Longitude</div>
-        <div class='table_cell'><%= deadly_quake.Longitude %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Deaths</div>
-        <div class='table_cell'><%= deadly_quake.Deaths %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Magnitude</div>
-        <div class='table_cell'><%= deadly_quake.Magnitude %></div>
-      </div>
-			<div class='table_small'>
-				<div class='table_cell'>Caused a tsunami</div>
-				<% if deadly_quake.tsunami.nil? %>
-					<div class='table_cell'>No</div>
-				<% else %>
-					<div class='table_cell'>Yes</div>
-				<% end %>
-			</div>
-      <div class='table_small'>
-        <div class='table_cell'></div>
-        <div class='table_cell'><%= link_to 'Details', deadly_quake, class: "btn btn-lg btn-outline-secondary" %></div>
-      </div>
-    </div>
-  <% end %>
-</div>
-<% end %>
-
-
-
-
