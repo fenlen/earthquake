@@ -13,6 +13,9 @@ class DeadlyQuakesController < ApplicationController
     unless deadly_quake.tsunami.nil?
       gon.tsunami = deadly_quake.tsunami
     end
+    unless deadly_quake.earthquake_datum.nil?
+      gon.earthquake_data = deadly_quake.earthquake_datum
+    end
   end
 
   private

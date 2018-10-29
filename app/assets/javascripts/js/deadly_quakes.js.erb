@@ -1,8 +1,10 @@
 function initDeadlyMap() {
     var deadly_quake = gon.deadly_quake;
     var tsunami = gon.tsunami;
+    var earthquake_data = gon.earthquake_data
     console.log(deadly_quake)
     console.log(tsunami)
+    console.log(earthquake_data)
     var mainmarker = {lat: parseFloat(deadly_quake.Longitude), lng: parseFloat(deadly_quake.Latitude) };
     var map = new google.maps.Map(
     document.getElementById('map'), {zoom: 3, center: mainmarker});
@@ -20,5 +22,18 @@ function initDeadlyMap() {
         tsunamimarkeronmap.addListener('click', function() {
             tsunamiinfowindow.open(map, tsunamimarkeronmap);
     });
+    }
+    if (earthquake_data != undefined){
+        var datalength = earthquake_data.length
+        var markers = [];
+        for (var i = 0; i < datalength; i++){
+            var contentString = `Other earthquake on the same day: <div><h1>` + `</h1><p>` + earthquake_data[i].Date + `</p></div>`;
+            var pos = {lat: parseFloat(earthquake_data[i].Latitude), lng: parseFloat(earthquake_data[i].Longitude)};
+            markers[i] = new google.maps.Marker({ position: pos, map: map, description: contentString, id: i });
+            var infowindow = new google.maps.InfoWindow({content: contentString});
+            google.maps.event.addListener(markers[i], 'click', function () {
+                infowindow.open(map,markers[this.id] )
+            })
+        }
     }
 }
