@@ -2,7 +2,7 @@
 
 <h1>Earthquake Data</h1>
 
-<table id="DeadlyQuakes" class="table display responsive no-wrap mw-100 mh-100" >
+<table id="EarthquakeDatum" class="table display responsive no-wrap mw-100 mh-100" >
   <thead>
   <tr>
     <th>Sourceid</th>
@@ -26,7 +26,7 @@
         <td><%= earthquake_datum.Longitude %></td>
         <td><%= earthquake_datum.Depth %></td>
         <td><%= earthquake_datum.Magnitude %></td>
-		<td><%= earthquake_datum.Source %></td>
+	    	<td><%= earthquake_datum.Source %></td>
         <td><%= link_to 'Details', earthquake_datum, class: "btn btn-lg btn-outline-secondary" %></td>
       </tr>
     <% end %>
