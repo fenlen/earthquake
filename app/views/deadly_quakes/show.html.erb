@@ -36,15 +36,18 @@
   <%= @deadly_quake.Magnitude %>
 </p>
 <% unless @deadly_quake.tsunami.nil? %>
-<button data-toggle="collapse" data-target="#tsunami">Associated Tsunami</button>
+
 
 <div id="tsunami" class="collapse">
-<div>Total Deaths: <%= @deadly_quake.tsunami.Total_Deaths %></div>
-<div>Total Injuries: <%= @deadly_quake.tsunami.Total_Injuries %></div>
-<div>Total Damage in Millions(Dollars): <%= @deadly_quake.tsunami.Total_Damage_Million_Dollars %></div>
-<div>Total Houses Destroyed: <%= @deadly_quake.tsunami.Total_Houses_Destroyed %></div>
-<div>Total Houses Damaged: <%= @deadly_quake.tsunami.Total_Houses_Damaged %></div>
+<p><strong>Tsunami Deaths:</strong> <%= @deadly_quake.tsunami.Total_Deaths %></p>
+<p><strong>Tsunami Injuries:</strong> <%= @deadly_quake.tsunami.Total_Injuries %></p>
+<p><strong>Tsunami Damage in Millions(Dollars):</strong> <%= @deadly_quake.tsunami.Total_Damage_Million_Dollars %></p>
+<p><strong>Tsunami Houses Destroyed:</strong> <%= @deadly_quake.tsunami.Total_Houses_Destroyed %></p>
+<p><strong>Tsunami Houses Damaged:</strong> <%= @deadly_quake.tsunami.Total_Houses_Damaged %></p>
 </div>
+
+<button data-toggle="collapse" data-target="#tsunami"  class="btn btn-lg btn-secondary my-2 my-sm-0">Associated Tsunami details</button>
+<br><br>
 <% end %>
 <%= link_to 'Back', deadly_quakes_path, class: "btn btn-lg btn-secondary my-2 my-sm-0" %>
 
