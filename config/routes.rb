@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :tsunamis
-  resources :deadly_quakes
+  resources :deadly_quakes do
+    collection do
+      get :map
+    end
+  end
+  root 'deadly_quakes#index'
   resources :earthquake_data
   resources :tsunamis
   resources :earthquake_data
@@ -14,6 +19,6 @@ Rails.application.routes.draw do
   resources :chart2
   resources :chart3
   mount API::Root, at: '/'
-
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
