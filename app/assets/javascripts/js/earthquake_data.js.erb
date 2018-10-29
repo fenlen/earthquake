@@ -1,0 +1,15 @@
+function initDataMap() {
+    var earthquake_data = gon.earthquake_data;
+    var tsunami = gon.tsunami;
+    console.log(earthquake_data)
+    console.log(tsunami)
+    var mainmarker = {lat: parseFloat(earthquake_data.Latitude), lng: parseFloat(earthquake_data.Longitude) };
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 3, center: mainmarker});
+    var contentString = `<div><h1>` + earthquake_data.Location + `</h1><p>` + earthquake_data.Date + `</p></div>`;
+    var maininfowindow = new google.maps.InfoWindow({content: contentString});
+    var mainmarkeronmap = new google.maps.Marker({position: mainmarker, map: map});
+    mainmarkeronmap.addListener('click', function() {
+        maininfowindow.open(map, mainmarkeronmap);
+    });
+}

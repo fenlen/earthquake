@@ -8,6 +8,11 @@ class DeadlyQuakesController < ApplicationController
   end
 
   def show
+    deadly_quake = DeadlyQuake.find(params[:id])
+    gon.deadly_quake = deadly_quake
+    unless deadly_quake.tsunami.nil?
+      gon.tsunami = deadly_quake.tsunami
+    end
   end
 
   private

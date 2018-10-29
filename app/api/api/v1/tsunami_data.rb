@@ -8,6 +8,9 @@ module API
         get "", root: :tsunami_data do
           Tsunami.all
         end
+        get "/:id", root: :tsunami_data do
+          Tsunami.find(params[:id])
+        end
       end
     end
   end

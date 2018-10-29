@@ -1,0 +1,24 @@
+function initDeadlyMap() {
+    var deadly_quake = gon.deadly_quake;
+    var tsunami = gon.tsunami;
+    console.log(deadly_quake)
+    console.log(tsunami)
+    var mainmarker = {lat: parseFloat(deadly_quake.Longitude), lng: parseFloat(deadly_quake.Latitude) };
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 3, center: mainmarker});
+    var contentString = `<div><h1>` + deadly_quake.Location + `</h1><p>` + deadly_quake.Date + `</p></div>`;
+    var maininfowindow = new google.maps.InfoWindow({content: contentString});
+    var mainmarkeronmap = new google.maps.Marker({position: mainmarker, map: map});
+    mainmarkeronmap.addListener('click', function() {
+        maininfowindow.open(map, mainmarkeronmap);
+    });
+    if (deadly_quake.tsunami_id != null){
+        var tsunamimarker = {lat: parseFloat(tsunami.Latitude), lng: parseFloat(tsunami.Longitude) };
+        var contentString = `Tsunami: <div><h1>` + tsunami.Location_Name + `</h1><p>` + tsunami.Date + `</p></div>`;
+        var tsunamiinfowindow = new google.maps.InfoWindow({content: contentString});
+        var tsunamimarkeronmap = new google.maps.Marker({position: tsunamimarker, map: map});
+        tsunamimarkeronmap.addListener('click', function() {
+            tsunamiinfowindow.open(map, tsunamimarkeronmap);
+    });
+    }
+}

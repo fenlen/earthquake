@@ -8,6 +8,9 @@ module API
         get "", root: :deadliest_quakes_data do
           DeadlyQuake.all
         end
+        get "/:id", root: :deadliest_quakes_data do
+          DeadlyQuake.find(params[:id])
+        end
       end
     end
   end

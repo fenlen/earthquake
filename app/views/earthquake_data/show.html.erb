@@ -50,7 +50,12 @@
   <strong>Source:</strong>
   <%= @earthquake_datum.Source %>
 </p>
-
+<div id="map" style="width: 50%; height: 400px; background-color: grey;"></div>
+<br><br>
+  <%= javascript_include_tag "js/earthquake_data" %>
+  <script
+  src="https://www.google.com/maps/api/js?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0&callback=initDataMap" async defer>
+  </script>
 <%= link_to 'Back', earthquake_data_path, class: "btn btn-lg btn-secondary my-2 my-sm-0" %>
 
 <br><br>

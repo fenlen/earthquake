@@ -8,6 +8,9 @@ module API
         get "", root: :earthquake_data do
           EarthquakeDatum.all
         end
+        get "/:id", root: :earthquake_data do
+          EarthquakeDatum.find(params[:id])
+        end
       end
     end
   end

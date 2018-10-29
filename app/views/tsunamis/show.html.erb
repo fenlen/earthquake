@@ -65,7 +65,12 @@
   <strong>Total houses damaged:</strong>
   <%= @tsunami.Total_Houses_Damaged %>
 </p>
-
+<div id="map" style="width: 50%; height: 400px; background-color: grey;"></div>
+<br><br>
+  <%= javascript_include_tag "js/tsunamis" %>
+  <script
+  src="https://www.google.com/maps/api/js?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0&callback=initTsunamiMap" async defer>
+  </script>
 <%= link_to 'Back', tsunamis_path, class: "btn btn-lg btn-secondary my-2 my-sm-0" %>
 
 <br><br>

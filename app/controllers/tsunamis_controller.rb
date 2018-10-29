@@ -10,6 +10,8 @@ class TsunamisController < ApplicationController
   # GET /tsunamis/1
   # GET /tsunamis/1.json
   def show
+    tsunami = Tsunami.find(params[:id])
+    gon.tsunami = tsunami
   end
 
   private

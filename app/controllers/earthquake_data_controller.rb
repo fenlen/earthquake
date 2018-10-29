@@ -10,6 +10,8 @@ class EarthquakeDataController < ApplicationController
   # GET /earthquake_data/1
   # GET /earthquake_data/1.json
   def show
+    earthquake_data = EarthquakeDatum.find(params[:id])
+    gon.earthquake_data = earthquake_data
   end
 
   private
