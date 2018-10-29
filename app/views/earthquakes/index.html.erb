@@ -10,10 +10,17 @@ Feel free to roam around and check out our database and statistics. Remember you
 search through the whole table row by row, our search feature is there for you. If you run out
 of time you can still browse on the go on your mobile device and have as good of an experience.
 </p>
+<% deadlyquakes = DeadlyQuake.all %>
+<div id="map" style="width: 100%; height: 400px; background-color: grey;"></div>
+<script>
+function initMap() {
 
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0" allowfullscreen>
-</iframe>
+  var marker1 = {lat: <%= deadlyquakes.first.Longitude.to_f %> , lng:<%= deadlyquakes.first.Latitude.to_f %> };
+  var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 4, center: marker1});
+  var marker2 = new google.maps.Marker({position: marker1, map: map});
+  }
+  </script>
+  <script
+  src="https://www.google.com/maps/api/js?key=AIzaSyClU7PUBbMI4-klxKQPsCV3nL5HcqiyIX0&callback=initMap" async defer>
+  </script>

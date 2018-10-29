@@ -15,8 +15,8 @@ csvDeadly.each do |row|
   t.EqCode = row['EqCode']
   t.Date = row['Date']
   t.Location = row['Location']
-  t.Longitude = row['Longitude']
   t.Latitude = row['Latitude']
+  t.Longitude = row['Longitude']
   t.Deaths = row['Deaths']
   t.Magnitude = row['Magnitude']
   t.tsunami_id = nil
@@ -91,16 +91,5 @@ tsunamis.each do |tsunami|
     end
   end
 end
-
-# b.earthquake_datum.create!(nil)
-# earthquakes = EarthquakeDatum.all
-# deadlyquakes = DeadlyQuake.all
-# earthquakes.each do |earthquake|
-#   deadlyquakes.each do |deadlyquakes|
-#     if earthquake.Date == deadlyquakes.Date
-#       earthquake.deadly_quake_id = deadlyquakes.id
-#     end
-#   end
-# end
 
 
