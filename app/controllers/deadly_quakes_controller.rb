@@ -4,7 +4,7 @@ class DeadlyQuakesController < ApplicationController
   # GET /deadly_quakes
   # GET /deadly_quakes.json
   def index
-    @deadly_quakes = DeadlyQuake.filter(params[:year], params[:mag])
+    @deadly_quakes = DeadlyQuake.filter(params[:year], params[:mag]).order(:EqCode)
   end
 
   def show

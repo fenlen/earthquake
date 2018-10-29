@@ -2,64 +2,33 @@
 
 <h1>Earthquake Data</h1>
 
-<%= form_tag(earthquake_data_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-  <%= label_tag(:year_search, "Year:") %>
-  <%= text_field_tag(:year, params[:year], class: "form-control form-control-lg mr-sm-2") %>
-  <%= label_tag(:mag_search, "Minimal magnitude:") %>
-  <%= text_field_tag(:mag, params[:mag], class: "form-control form-control-lg mr-sm-2") %>
-  <%= submit_tag("Filter", class: "btn btn-lg btn-secondary my-2 my-sm-0") %>
-<% end %>
-
-<div class="table" id="results">
-  <div class='theader'>
-    <div class='table_header'>Sourceid</div>
-    <div class='table_header'>Date</div>
-    <div class='table_header'>Time</div>
-    <div class='table_header'>Latitude</div>
-    <div class='table_header'>Longitude</div>
-    <div class='table_header'>Depth</div>
-    <div class='table_header'>Magnitude</div>
-    <div class='table_header'>Source</div>
-    <div class='table_header'></div>
-  </div>
-  <% @earthquake_data.each do |earthquake_datum| %>
-    <div class='table_row'>
-      <div class='table_small'>
-        <div class='table_cell'>Sourceid</div>
-        <div class='table_cell'><%= earthquake_datum.SourceId %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Date</div>
-        <div class='table_cell'><%= earthquake_datum.Date %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Time</div>
-        <div class='table_cell'><%= earthquake_datum.Time.to_s(:time) %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Latitude</div>
-        <div class='table_cell'><%= earthquake_datum.Latitude %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Longitude</div>
-        <div class='table_cell'><%= earthquake_datum.Longitude %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Depth</div>
-        <div class='table_cell'><%= earthquake_datum.Depth %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Magnitude</div>
-        <div class='table_cell'><%= earthquake_datum.Magnitude %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'>Source</div>
-        <div class='table_cell'><%= earthquake_datum.Source %></div>
-      </div>
-      <div class='table_small'>
-        <div class='table_cell'></div>
-        <div class='table_cell'><%= link_to 'Details', earthquake_datum, class: "btn btn-lg btn-outline-secondary" %></div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<table id="DeadlyQuakes" class="table display responsive no-wrap mw-100 mh-100" >
+  <thead>
+  <tr>
+    <th>Sourceid</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Depth</th>
+    <th>Magnitude</th>
+    <th>Source</th>
+	<th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @earthquake_data.each do |earthquake_datum| %>
+      <tr>
+        <td><%= earthquake_datum.SourceId %></td>
+        <td><%= earthquake_datum.Date %></td>
+        <td><%= earthquake_datum.Time.to_s(:time) %></td>
+        <td><%= earthquake_datum.Latitude %></td>
+        <td><%= earthquake_datum.Longitude %></td>
+        <td><%= earthquake_datum.Depth %></td>
+        <td><%= earthquake_datum.Magnitude %></td>
+		<td><%= earthquake_datum.Source %></td>
+        <td><%= link_to 'Details', earthquake_datum, class: "btn btn-lg btn-outline-secondary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
