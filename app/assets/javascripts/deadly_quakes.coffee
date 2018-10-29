@@ -5,3 +5,5 @@
 $(document).on 'turbolinks:load', ->
   $('#DeadlyQuakes').DataTable()
   return
+
+  

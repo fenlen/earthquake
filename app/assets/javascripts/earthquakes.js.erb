@@ -1,0 +1,64 @@
+function initMap() {
+  <% deadlyquakes = DeadlyQuake.all %>
+  <% tsunamis = Tsunami.all %>
+  <% earthquakedata = EarthquakeDatum.all %>
+  <% deadlyquakes.each do |deadlyquake| %>
+    var marker<%= deadlyquake.id %> = {lat: <%= deadlyquake.Longitude.to_f %> , lng:<%= deadlyquake.Latitude.to_f %> };
+  <% end %>
+  var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 2, center: marker1});
+  <% deadlyquakes.each do |deadlyquake| %>
+      var contentString = `<div><h1><%= deadlyquake.Location %></h1><p> <%= deadlyquake.Date %></p><a href="deadly_quakes/<%= deadlyquake.id %>" class="btn btn-lg btn-outline-secondary">Details</a>`;
+      var infowindow<%= deadlyquake.id %> = new google.maps.InfoWindow({content: contentString});
+      var markeronmap<%= deadlyquake.id %> = new google.maps.Marker({position: marker<%= deadlyquake.id %>, map: map});
+      markeronmap<%= deadlyquake.id %>.addListener('click', function() {
+        infowindow<%= deadlyquake.id %>.open(map, markeronmap<%= deadlyquake.id %>);
+  });
+  <% end %>
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: getPoints(),
+          map: map
+        });
+  }
+        function toggleHeatmap() {
+        heatmap.setMap(heatmap.getMap() ? null : map);
+      }
+       function changeGradient() {
+        var gradient = [
+          'rgba(0, 255, 255, 0)',
+          'rgba(0, 255, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 127, 255, 1)',
+          'rgba(0, 63, 255, 1)',
+          'rgba(0, 0, 255, 1)',
+          'rgba(0, 0, 223, 1)',
+          'rgba(0, 0, 191, 1)',
+          'rgba(0, 0, 159, 1)',
+          'rgba(0, 0, 127, 1)',
+          'rgba(63, 0, 91, 1)',
+          'rgba(127, 0, 63, 1)',
+          'rgba(191, 0, 31, 1)',
+          'rgba(255, 0, 0, 1)'
+        ]
+        heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+      }
+      function changeRadius() {
+        heatmap.set('radius', heatmap.get('radius') ? null : 20);
+      }
+       function changeOpacity() {
+        heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+      }
+
+  function getPoints() {
+			var points = []
+			<% deadlyquakes.each do |deadly_quake| %>
+				points.push(new google.maps.LatLng(<%= deadly_quake.Latitude.to_f %>, <%= deadly_quake.Longitude.to_f %>));
+			<% end %>
+			<% tsunamis.each do |tsunami| %>
+				points.push(new google.maps.LatLng(<%= tsunami.Latitude.to_f %>, <%= tsunami.Longitude.to_f %>));
+			<% end %>
+			<% earthquakedata.each do |earthquake_data| %>
+				points.push(new google.maps.LatLng(<%= earthquake_data.Latitude.to_f %>, <%= earthquake_data.Longitude.to_f %>));
+			<% end %>
+          return points
+}
